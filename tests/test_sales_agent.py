@@ -22,7 +22,7 @@ def test_total_revenue_and_kpis():
     expected_orders = len(df)
     
     kpis = get_kpi_summary()
-    assert kpis["total_orders"] == expected_orders == 1000
+    assert kpis["total_orders"] == expected_orders
     assert abs(kpis["total_revenue_inr"] - expected_sales) < 1e-2
     assert abs(kpis["total_profit_inr"] - expected_profit) < 1e-2
     assert abs(kpis["average_order_value_inr"] - round(expected_sales / expected_orders, 2)) < 1e-2

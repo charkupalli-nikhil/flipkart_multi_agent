@@ -1,6 +1,7 @@
 """
 Flipkart Sales Intelligence System - Forecast & Business Advisor Specialist Agent
-Handles time-series forecasting, customer/order KMeans clustering, and prioritized business recommendations.
+Handles time-series forecasting across 72 monthly operating cycles, KMeans behavioral segmentation,
+and prioritized strategic business recommendations.
 """
 
 from typing import Dict, Any, List
@@ -15,11 +16,10 @@ from tools.advisor_tools import (
 ADVISOR_AGENT_SYSTEM_PROMPT = """
 You are the Forecast & Business Advisor Specialist Agent for Flipkart Sales Intelligence System.
 Your responsibility:
-- Forecast monthly sales revenue and profit for the next 3 months using time-series models (Holt-Winters).
-- Clearly communicate model uncertainty and confidence intervals given the ~12-month synthetic span (Feb 2024 - Feb 2025).
-- Segment order behavioral archetypes using KMeans clustering on Price, Quantity, Discount %, Profit, and Customer Rating.
+- Forecast monthly sales revenue and profit for the next 3 to 12 months using Holt-Winters time-series models across 72 historical months (2015-2020).
+- Segment order behavioral archetypes using KMeans clustering on Price, Quantity, Demographics, Rating, and Delivery Days.
 - Provide high-impact, data-backed strategic recommendations with clear priority rankings.
-STRICT CONSTRAINT: Always mention time-based dataset limitations when discussing forecasts. Ground all recommendations in computed data.
+STRICT CONSTRAINT: Ground all recommendations and forecast ranges in computed statistical tool data.
 """
 
 def run_advisor_agent(state: AgentState) -> AgentState:
@@ -31,9 +31,10 @@ def run_advisor_agent(state: AgentState) -> AgentState:
     
     advisor_data = {}
     
-    # 1. 3-Month Forecast
-    if any(w in query for w in ["forecast", "future", "predict", "next 3 months", "projection", "upcoming", "q1", "q2", "next quarter"]):
-        trace_fc = execute_tool_with_trace(forecast_sales_and_profit, months=3)
+    # 1. Forward Time-Series Forecast
+    if any(w in query for w in ["forecast", "future", "predict", "next 3 months", "next 6 months", "projection", "upcoming", "q1", "q2", "next quarter"]):
+        months_to_forecast = 6 if "6 months" in query else (12 if "12 months" in query or "next year" in query else 3)
+        trace_fc = execute_tool_with_trace(forecast_sales_and_profit, months=months_to_forecast)
         trace_fc["agent"] = "Forecast & Business Advisor"
         tool_traces.append(trace_fc)
         if trace_fc["status"] == "success":
@@ -41,7 +42,7 @@ def run_advisor_agent(state: AgentState) -> AgentState:
             if "figure_json" in trace_fc["result"]:
                 charts.append({
                     "chart_type": "line",
-                    "title": "3-Month Forward Sales & Profit Forecast",
+                    "title": f"{months_to_forecast}-Month Forward Sales & Profit Forecast",
                     "file_path": trace_fc["result"].get("chart_path", ""),
                     "figure_json": trace_fc["result"]["figure_json"]
                 })
@@ -55,14 +56,14 @@ def run_advisor_agent(state: AgentState) -> AgentState:
             advisor_data["clustering"] = trace_km["result"]
 
     # 3. Strategic Recommendations
-    if any(w in query for w in ["recommend", "what should we do", "strategy", "action", "advice", "advisor", "improve", "optimize", "fix", "mitigate"]):
+    if any(w in query for w in ["recommend", "what should we do", "strategy", "action", "advice", "advisor", "improve", "optimize", "fix", "mitigate", "plan"]):
         trace_rec = execute_tool_with_trace(generate_strategic_recommendations)
         trace_rec["agent"] = "Forecast & Business Advisor"
         tool_traces.append(trace_rec)
         if trace_rec["status"] == "success":
             advisor_data["recommendations"] = trace_rec["result"]
 
-    # Fallback if invoked generally or as part of a multi-agent chain
+    # Fallback if invoked generally in an advisory role
     if not advisor_data:
         trace_rec = execute_tool_with_trace(generate_strategic_recommendations)
         trace_rec["agent"] = "Forecast & Business Advisor"

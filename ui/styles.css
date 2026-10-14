@@ -1,364 +1,599 @@
-/* Flipkart Sales Intelligence System - Ultra High-Contrast Modern Glassmorphic Theme */
+/* Flipkart Sales Intelligence System - Official Enterprise Commerce OS Theme */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg-main: #0B0F19;
-    --bg-card: #131B2E;
-    --bg-card-hover: #1E293B;
-    --border-color: rgba(255, 255, 255, 0.15);
-    --primary: #6366F1;
-    --primary-light: #818CF8;
-    --primary-glow: rgba(99, 102, 241, 0.4);
-    --cyan: #38BDF8;
-    --emerald: #10B981;
-    --emerald-light: #34D399;
-    --amber: #F59E0B;
-    --rose: #F43F5E;
-    --text-pure-white: #FFFFFF;
-    --text-primary: #F8FAFC;
-    --text-secondary: #E2E8F0;
-    --text-muted: #94A3B8;
+    /* Official Flipkart Brand Identity */
+    --fk-blue: #2874F0;
+    --fk-blue-dark: #1255C8;
+    --fk-blue-glow: rgba(40, 116, 240, 0.4);
+    --fk-yellow: #FFE11B;
+    --fk-yellow-dark: #F5D000;
+    --fk-orange: #FB641B;
+    --fk-navy: #07101E;
+    --fk-surface: #0E1A30;
+    --fk-surface-card: rgba(14, 26, 48, 0.85);
+    --fk-surface-hover: rgba(22, 38, 68, 0.95);
+    
+    --fk-green: #26A541;
+    --fk-green-glow: rgba(38, 165, 65, 0.35);
+    --fk-red: #FF4757;
+    --fk-cyan: #00D2D3;
+    
+    --border-fk: rgba(40, 116, 240, 0.25);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-card: rgba(255, 255, 255, 0.12);
+    
+    --text-pure: #FFFFFF;
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --text-muted: #8E9DB2;
 }
 
-/* Global Application Styling */
+/* Base Viewport & Background */
 html, body, .stApp {
-    background-color: #080D1A !important;
+    background-color: var(--fk-navy) !important;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(40, 116, 240, 0.18) 0px, transparent 45%),
+        radial-gradient(at 100% 0%, rgba(255, 225, 27, 0.08) 0px, transparent 45%),
+        radial-gradient(at 50% 100%, rgba(38, 165, 65, 0.06) 0px, transparent 50%) !important;
+    background-attachment: fixed !important;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    color: #F8FAFC !important;
+    color: var(--text-primary) !important;
 }
 
-/* Force all text elements to be crisp, bright, and legible */
+/* Typography */
 p, span, div, li, label, .stMarkdown, .stMarkdown p {
-    color: #F8FAFC !important;
-    font-size: 0.96rem;
-    line-height: 1.65;
+    color: var(--text-secondary) !important;
+    font-size: 0.94rem;
+    line-height: 1.6;
 }
 
-/* Headings with high-contrast gradient illumination */
 h1, h2, h3, h4, h5, h6, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {
-    color: #FFFFFF !important;
+    color: var(--text-pure) !important;
     font-weight: 700 !important;
-    letter-spacing: -0.015em;
-    margin-top: 18px !important;
-    margin-bottom: 10px !important;
+    letter-spacing: -0.02em;
 }
 
 h1, .stMarkdown h1 {
     font-size: 1.85rem !important;
-    color: #38BDF8 !important;
+    color: #FFFFFF !important;
 }
 
 h2, .stMarkdown h2 {
-    font-size: 1.45rem !important;
-    color: #818CF8 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.35rem !important;
+    color: #93C5FD !important;
+    border-bottom: 1px solid var(--border-subtle);
     padding-bottom: 8px;
+    margin-top: 20px !important;
 }
 
 h3, .stMarkdown h3 {
-    font-size: 1.2rem !important;
-    color: #34D399 !important;
+    font-size: 1.15rem !important;
+    color: #FFE11B !important;
 }
 
 h4, .stMarkdown h4 {
-    font-size: 1.05rem !important;
-    color: #FBBF24 !important;
-}
-
-/* High-Contrast Bold Text */
-strong, b, .stMarkdown strong {
-    color: #FFFFFF !important;
-    font-weight: 700 !important;
-}
-
-/* Markdown Lists */
-ul, ol {
-    padding-left: 24px !important;
-    margin-bottom: 16px !important;
-}
-
-li {
-    margin-bottom: 6px !important;
-    color: #F1F5F9 !important;
-}
-
-/* Blockquotes with neon accent bar */
-blockquote {
-    border-left: 4px solid #38BDF8 !important;
-    background: rgba(56, 189, 248, 0.08) !important;
-    padding: 12px 18px !important;
-    border-radius: 0 8px 8px 0 !important;
+    font-size: 1.02rem !important;
     color: #F8FAFC !important;
-    margin: 14px 0 !important;
 }
 
-/* Ultra High-Contrast Markdown & HTML Tables */
-table {
-    width: 100% !important;
-    border-collapse: separate !important;
-    border-spacing: 0 !important;
-    margin: 16px 0 24px 0 !important;
-    background-color: #0F172A !important;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
-}
-
-th {
-    background-color: #1E293B !important;
-    color: #38BDF8 !important;
+strong, b, .stMarkdown strong {
+    color: var(--text-pure) !important;
     font-weight: 700 !important;
-    font-size: 0.88rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-    padding: 14px 18px !important;
-    border-bottom: 2px solid rgba(56, 189, 248, 0.4) !important;
-    text-align: left !important;
 }
 
-td {
-    background-color: transparent !important;
-    color: #FFFFFF !important;
-    font-size: 0.95rem !important;
-    font-weight: 500 !important;
-    padding: 13px 18px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+/* Flipkart Top Navigation Header */
+.fk-top-navbar {
+    background: linear-gradient(135deg, rgba(14, 26, 48, 0.95) 0%, rgba(7, 16, 30, 0.98) 100%);
+    border: 1px solid var(--border-fk);
+    border-radius: 14px;
+    padding: 16px 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6), 0 0 20px rgba(40, 116, 240, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-tr:nth-child(even) td {
-    background-color: rgba(30, 41, 59, 0.4) !important;
+.fk-top-navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2874F0 0%, #00D2D3 40%, #FFE11B 80%, #FB641B 100%);
 }
 
-tr:hover td {
-    background-color: rgba(99, 102, 241, 0.18) !important;
-    color: #38BDF8 !important;
+.fk-brand-section {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
-/* Header & Banner styling */
-.hero-banner {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(16, 185, 129, 0.18) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 24px;
-    backdrop-filter: blur(16px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+.fk-logo-box {
+    background: #2874F0;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 14px rgba(40, 116, 240, 0.5);
 }
 
-.hero-title {
-    font-size: 2.1rem;
+.fk-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.fk-brand-name {
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fk-brand-highlight {
+    color: #FFE11B;
+    font-style: italic;
     font-weight: 800;
-    color: #FFFFFF !important;
-    margin-bottom: 8px;
+}
+
+.fk-pill-badge {
+    background: rgba(255, 225, 27, 0.15);
+    border: 1px solid rgba(255, 225, 27, 0.4);
+    color: #FFE11B;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.fk-brand-subtitle {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+}
+
+.fk-status-cluster {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.hero-subtitle {
-    color: #CBD5E1 !important;
-    font-size: 1.02rem;
-    line-height: 1.5;
+.fk-status-chip {
+    background: rgba(38, 165, 65, 0.15);
+    border: 1px solid rgba(38, 165, 65, 0.4);
+    color: #4ADE80;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* KPI Card Grid */
-.kpi-container {
+.fk-status-pulse {
+    width: 8px;
+    height: 8px;
+    background: #4ADE80;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #4ADE80;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Flipkart Executive KPI Grid */
+.fk-kpi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 16px;
-    margin-bottom: 28px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
-.kpi-card {
-    background: linear-gradient(145deg, #131B2E 0%, #0F172A 100%);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 14px;
-    padding: 18px 22px;
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
-    transition: all 0.25s ease-in-out;
+@media (max-width: 1200px) {
+    .fk-kpi-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    .fk-kpi-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.kpi-card:hover {
+.fk-kpi-card {
+    background: var(--fk-surface-card);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    padding: 15px 16px;
+    transition: all 0.22s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.fk-kpi-card:hover {
     transform: translateY(-3px);
-    border-color: #38BDF8;
-    box-shadow: 0 10px 28px rgba(56, 189, 248, 0.25);
+    border-color: var(--fk-blue);
+    background: var(--fk-surface-hover);
+    box-shadow: 0 10px 24px -8px rgba(40, 116, 240, 0.4);
 }
 
-.kpi-label {
-    font-size: 0.82rem;
+.fk-card-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+}
+
+.bar-blue { background: #2874F0; }
+.bar-green { background: #26A541; }
+.bar-yellow { background: #FFE11B; }
+.bar-orange { background: #FB641B; }
+.bar-cyan { background: #00D2D3; }
+.bar-purple { background: #A855F7; }
+
+.fk-kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.fk-kpi-title {
+    font-size: 0.74rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: #94A3B8 !important;
-    margin-bottom: 8px;
+    color: var(--text-muted);
 }
 
-.kpi-value {
-    font-size: 1.6rem;
+.fk-kpi-icon {
+    font-size: 1.05rem;
+}
+
+.fk-kpi-val {
+    font-size: 1.30rem;
     font-weight: 800;
-    color: #FFFFFF !important;
+    color: #FFFFFF;
+    margin-bottom: 4px;
     letter-spacing: -0.02em;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
 }
 
-.kpi-subtext {
-    font-size: 0.82rem;
-    color: #34D399 !important;
-    margin-top: 6px;
-    font-weight: 600;
-}
-
-/* Chat message bubbles */
-[data-testid="stChatMessage"] {
-    background: #111A2E !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 14px !important;
-    padding: 16px 20px !important;
-    margin-bottom: 14px !important;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3) !important;
-}
-
-[data-testid="stChatMessage"] p, [data-testid="stChatMessage"] span, [data-testid="stChatMessage"] li {
-    color: #F8FAFC !important;
-}
-
-/* User Message bubble distinction */
-[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.22) 0%, rgba(56, 189, 248, 0.18) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.5) !important;
-}
-
-/* Sidebar styling */
-[data-testid="stSidebar"] {
-    background-color: #0B1120 !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
-}
-
-[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
-    color: #FFFFFF !important;
-}
-
-[data-testid="stSidebar"] p, [data-testid="stSidebar"] span {
-    color: #E2E8F0 !important;
-}
-
-/* Agent Badge Pills */
-.badge-pill {
-    display: inline-flex;
+.fk-kpi-meta {
+    display: flex;
     align-items: center;
-    padding: 5px 12px;
-    border-radius: 9999px;
-    font-size: 0.8rem;
+    gap: 6px;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+}
+
+.fk-tag-pill {
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-size: 0.70rem;
     font-weight: 700;
-    margin-right: 8px;
-    margin-bottom: 8px;
 }
 
-.badge-sales {
-    background: rgba(99, 102, 241, 0.28);
-    color: #A5B4FC !important;
-    border: 1px solid #818CF8;
-}
+.tag-blue { background: rgba(40, 116, 240, 0.2); color: #93C5FD; }
+.tag-green { background: rgba(38, 165, 65, 0.2); color: #86EFAC; }
+.tag-yellow { background: rgba(255, 225, 27, 0.2); color: #FDE047; }
+.tag-red { background: rgba(255, 71, 87, 0.2); color: #FCA5A5; }
 
-.badge-profit {
-    background: rgba(16, 185, 129, 0.28);
-    color: #6EE7B7 !important;
-    border: 1px solid #34D399;
-}
-
-.badge-advisor {
-    background: rgba(245, 158, 11, 0.28);
-    color: #FDE68A !important;
-    border: 1px solid #FBBF24;
-}
-
-/* Streamlit Tabs Navigation */
+/* Flipkart Segmented Tabs */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 10px;
-    background-color: #0F172A;
-    padding: 8px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(14, 26, 48, 0.75) !important;
+    padding: 6px !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--border-fk) !important;
+    gap: 6px !important;
 }
 
 .stTabs [data-baseweb="tab"] {
-    height: 44px;
-    background-color: transparent;
-    border-radius: 8px;
-    color: #94A3B8 !important;
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 0 18px;
+    height: 42px !important;
+    border-radius: 8px !important;
+    color: var(--text-muted) !important;
+    font-weight: 700 !important;
+    font-size: 0.90rem !important;
+    padding: 0 16px !important;
     border: none !important;
-}
-
-.stTabs [aria-selected="true"] {
-    background-color: #6366F1 !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
-}
-
-/* Streamlit Buttons */
-.stButton > button {
-    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%) !important;
-    color: #FFFFFF !important;
-    font-weight: 600 !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 10px !important;
-    padding: 10px 18px !important;
+    background: transparent !important;
     transition: all 0.2s ease !important;
 }
 
-.stButton > button:hover {
-    border-color: #38BDF8 !important;
-    color: #38BDF8 !important;
-    box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3) !important;
-    transform: translateY(-1px);
+.stTabs [data-baseweb="tab"]:hover {
+    color: #FFFFFF !important;
+    background: rgba(40, 116, 240, 0.12) !important;
 }
 
-/* Expander headers */
-.streamlit-expanderHeader {
-    background-color: #131B2E !important;
-    color: #38BDF8 !important;
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #2874F0 0%, #1255C8 100%) !important;
+    color: #FFFFFF !important;
+    border: 1px solid #3B82F6 !important;
+    box-shadow: 0 4px 14px rgba(40, 116, 240, 0.45) !important;
+}
+
+/* Chat Messages & Flipkart Copilot Styling */
+[data-testid="stChatMessage"] {
+    background: rgba(14, 26, 48, 0.75) !important;
+    border: 1px solid var(--border-card) !important;
+    border-radius: 14px !important;
+    padding: 18px 22px !important;
+    margin-bottom: 14px !important;
+}
+
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+    background: rgba(22, 38, 68, 0.85) !important;
+    border-color: rgba(40, 116, 240, 0.4) !important;
+}
+
+/* Multi-Agent Trace Component */
+.fk-trace-card {
+    background: rgba(7, 16, 30, 0.75);
+    border: 1px solid var(--border-fk);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 10px;
+}
+
+.agent-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-right: 8px;
+    margin-bottom: 6px;
+}
+
+.badge-sales { background: rgba(40, 116, 240, 0.25); border: 1px solid #2874F0; color: #BFDBFE; }
+.badge-profit { background: rgba(38, 165, 65, 0.25); border: 1px solid #26A541; color: #BBF7D0; }
+.badge-advisor { background: rgba(255, 225, 27, 0.25); border: 1px solid #FFE11B; color: #FEF08A; }
+.badge-rag { background: rgba(0, 210, 211, 0.25); border: 1px solid #00D2D3; color: #A5F3FC; }
+
+.trace-step-pill {
+    background: rgba(14, 26, 48, 0.85);
+    border-left: 3px solid #2874F0;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 12px;
+    margin-top: 6px;
+    font-size: 0.84rem;
+}
+
+/* Sidebar Custom Theme */
+[data-testid="stSidebar"] {
+    background-color: #060D1A !important;
+    border-right: 1px solid var(--border-card) !important;
+}
+
+[data-testid="stSidebar"] hr {
+    border-color: var(--border-subtle) !important;
+    margin: 14px 0 !important;
+}
+
+/* Tables */
+table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    border: 1px solid var(--border-card) !important;
+    margin: 14px 0 !important;
+}
+
+th {
+    background: rgba(22, 38, 68, 0.95) !important;
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-size: 0.82rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    padding: 12px 14px !important;
+    border-bottom: 2px solid var(--border-fk) !important;
+}
+
+td {
+    padding: 10px 14px !important;
+    background: rgba(14, 26, 48, 0.5) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    font-size: 0.87rem !important;
+}
+
+tr:hover td {
+    background: rgba(40, 116, 240, 0.15) !important;
+}
+
+/* Diagnostic & Recovery Alert Card */
+.diagnostic-card {
+    background: linear-gradient(135deg, rgba(251, 100, 27, 0.12) 0%, rgba(14, 26, 48, 0.85) 100%);
+    border: 1px solid rgba(251, 100, 27, 0.4);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px -6px rgba(251, 100, 27, 0.2);
+}
+
+.diagnostic-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #FED7AA;
+    margin-bottom: 8px;
+}
+
+.diagnostic-body {
+    font-size: 0.90rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Buttons with Flipkart Signature Styling */
+.stButton>button {
+    background: linear-gradient(135deg, #2874F0 0%, #1255C8 100%) !important;
+    color: #FFFFFF !important;
     font-weight: 700 !important;
+    border: 1px solid #3B82F6 !important;
     border-radius: 8px !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 8px 16px !important;
+    box-shadow: 0 4px 12px rgba(40, 116, 240, 0.35) !important;
+    transition: all 0.2s ease !important;
 }
 
-/* Metric Widgets */
+.stButton>button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(40, 116, 240, 0.6) !important;
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%) !important;
+}
+
+/* Flipkart Agent Response Header & Badges */
+.fk-agent-msg-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.fk-agent-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fk-agent-avatar {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #2874F0 0%, #1255C8 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(40, 116, 240, 0.4);
+}
+
+.fk-agent-name {
+    font-weight: 800;
+    font-size: 0.96rem;
+    color: #FFFFFF !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fk-verified-badge {
+    background: rgba(38, 165, 65, 0.18);
+    border: 1px solid rgba(38, 165, 65, 0.45);
+    color: #4ADE80 !important;
+    font-size: 0.70rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    letter-spacing: 0.03em;
+}
+
+.fk-agent-meta {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+}
+
+.fk-data-chip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-card);
+    padding: 5px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+}
+
+/* Quick Action Suggestion Chips */
+.fk-chips-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 16px 0;
+    padding: 8px 12px;
+    background: rgba(14, 26, 48, 0.6);
+    border: 1px solid var(--border-fk);
+    border-radius: 10px;
+    align-items: center;
+}
+
+.fk-chips-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #FFE11B;
+    margin-right: 4px;
+}
+
+/* Streamlit Chat Input Enhancement */
+[data-testid="stChatInput"] {
+    border-radius: 12px !important;
+    border: 1px solid var(--border-fk) !important;
+    background: rgba(14, 26, 48, 0.95) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-testid="stChatInput"]:focus-within {
+    border-color: #2874F0 !important;
+    box-shadow: 0 0 0 2px rgba(40, 116, 240, 0.3) !important;
+}
+
+[data-testid="stChatInput"] textarea {
+    color: #FFFFFF !important;
+    font-size: 0.95rem !important;
+}
+
+/* Streamlit Metrics */
+[data-testid="stMetric"] {
+    background: var(--fk-surface-card) !important;
+    border: 1px solid var(--border-card) !important;
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+}
+
 [data-testid="stMetricValue"] {
     color: #FFFFFF !important;
-    font-size: 1.8rem !important;
     font-weight: 800 !important;
+    font-family: 'JetBrains Mono', monospace !important;
 }
 
 [data-testid="stMetricLabel"] {
-    color: #94A3B8 !important;
-    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    font-size: 0.80rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
 }
 
-/* Fix Dropdown / Selectbox Menu Visibility */
-[data-baseweb="popover"] > div,
-[data-baseweb="menu"] {
-    background-color: #131B2E !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-
-[data-baseweb="menu"] li {
-    background-color: transparent !important;
-    color: #FFFFFF !important;
-}
-
-[data-baseweb="menu"] li:hover,
-[data-baseweb="menu"] li[aria-selected="true"] {
-    background-color: #1E293B !important;
-    color: #38BDF8 !important;
-}
-
-/* Fix generic input backgrounds */
-[data-baseweb="select"] > div {
-    background-color: #0F172A !important;
-    color: #FFFFFF !important;
-    border-color: rgba(255, 255, 255, 0.15) !important;
-}

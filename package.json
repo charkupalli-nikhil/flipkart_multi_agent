@@ -1,0 +1,20 @@
+{
+  "name": "flipkart-commerce-copilot",
+  "version": "1.0.0",
+  "description": "Flipkart Sales Intelligence Multi-Agent Command Center",
+  "scripts": {
+    "dev": "streamlit run ui/app.py",
+    "start": "streamlit run ui/app.py",
+    "test": "python tests/run_all_tests.py",
+    "presentation": "python scripts/generate_presentation.py"
+  },
+  "keywords": [
+    "agentic-ai",
+    "flipkart",
+    "langgraph",
+    "gemini",
+    "streamlit"
+  ],
+  "author": "Antigravity AI Team",
+  "license": "MIT"
+}

@@ -1,25 +1,49 @@
-# Flipkart Return Policy and Knowledge Base
+# Flipkart E-Commerce Return Policy, Fulfillment SLA, and Knowledge Base
 
-## Return Policy for Electronics
-- Electronics can be returned within 14 days of purchase.
-- The item must be in its original packaging.
-- Damaged electronics will not be accepted unless reported within 24 hours of delivery.
+## Return Policy for Health and Beauty
+- Return Window: 7 days from verified delivery date.
+- Eligible categories include Vitamins & Dietary Supplements, Medical Supplies & Equipment, Beauty & Personal Care, and Fragrances.
+- Personal care, skincare, and opened consumable supplements are non-returnable unless the package arrived damaged, expired, or defective.
+- Items returned with "Quality-Defective item" or "Delivery-Wrong item" are eligible for instant full refund or replacement.
 
-## Return Policy for Clothing
-- Clothing can be returned within 30 days of purchase.
-- Items must be unworn and unwashed with original tags attached.
+## Return Policy for Fashion & Apparel
+- Return Window: 30 days from delivery.
+- Covers Men's Fashion, Women's Fashion, Boy's Fashion, Girl's Fashion, and Footwear.
+- Items must be unworn, unwashed, and returned with original brand tags and packaging intact.
+- Size and fit exchanges ("Product - Not fitting expectation") are supported with free doorstep reverse pickup.
 
-## Return Policy for Books
-- Books can be returned within 7 days of purchase.
-- E-books are non-refundable once downloaded.
+## Return Policy for Phones and Tablets
+- Return Window: 10 days for verified defect replacement or refund.
+- Applies to Mobile Phones, Tablets, and Mobile Accessories (chargers, cases, cables).
+- Must include original box, IMEI matching label, power adapter, and supplied accessories.
+- Device lock credentials (PIN/Google Account/Apple ID) must be removed prior to pickup.
 
-## Discount Guidelines
-- Discounts over 25% require manager approval.
-- The "Big Billion Days" sale allows discounts up to 40% on select categories without manager approval.
-- Employee discounts are strictly 15% and cannot be combined with other offers.
+## Return Policy for Home and Office
+- Return Window: 15 days from delivery.
+- Applies to Home & Furniture, Kitchen & Dining, and Office Equipment.
+- Large furniture items (wardrobes, tables) require technician disassembly verification before reverse pickup.
+- Missing hardware or assembly bolts ("Delivery - Missing item/part") are resolved via express replacement kit dispatch within 48 hours.
 
-## Delivery Timeframes
-- North Region: 2-4 business days.
-- South Region: 3-5 business days.
-- East Region: 4-7 business days.
-- West Region: 3-5 business days.
+## Return Policy for Electronics & Audio
+- Return Window: 10 days replacement warranty for manufacturing defects.
+- Covers Digital Cameras, Home Audio (Bluetooth Home Theatres, Soundbars), and Video equipment.
+- Onsite inspection verifies technical defects before refund authorization.
+
+## Fulfillment SLAs and Delivery Timeframes
+- Express Delivery: 2 to 4 business days (National average: 3.5 days). Prioritized fulfillment across Zone 1, Zone 2, and Zone 3 metropolitan centers.
+- Standard Delivery: 7 to 11 business days (National average: 9.9 days). Standard ground courier network covering all 26 regional zones.
+- Shipped from Abroad: 14 to 18 business days (National average: 15.0 days). International air freight with customs clearance tracking.
+- Zone 1 & Zone 2: Metro priority zones with fastest hub throughput and lowest return transit times.
+- Zone 3 & Zone 4: Regional logistics zones with dedicated line-haul transport.
+
+## Return Reason Guidelines & Quality Standards
+- Delivery - Missing item/part: Express replacement dispatched within 48 hours; merchant SLA tracked for packing accuracy.
+- Quality-Defective item: 100% refund or replacement; vendor audited if defect rate exceeds 3.0%.
+- Delivery-Wrong item: Instant reverse pickup; correct SKU expedited upon pickup scan.
+- Onsite - Description mismatch: Merchant penalized for catalog discrepancies; product listing flagged for content review.
+- Product - Not fitting expectation: Hassle-free customer return; refund credited to original payment method or Flipkart wallet.
+
+## Pricing and Margin Architecture
+- Structurally sound gross margins across catalog range between 40% to 65% across categories.
+- Core Health & Beauty and Fashion categories drive the highest unit velocity and margin contribution.
+- Reverse logistics costs on returned merchandise average shipping fee plus inventory restocking overhead.
