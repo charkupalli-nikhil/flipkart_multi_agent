@@ -25,7 +25,12 @@ def get_kpi_summary() -> Dict[str, Any]:
     total_orders = int(len(df))
     
     # Realized metrics accounting for returns
-    is_returned = df["Is Returned"] if "Is Returned" in df.columns else (df["Status"] == "Returned")
+    if "Is Returned" in df.columns:
+        is_returned = df["Is Returned"]
+    elif "Status" in df.columns:
+        is_returned = (df["Status"] == "Returned")
+    else:
+        is_returned = pd.Series(False, index=df.index)
     returned_orders = int(is_returned.sum())
     return_rate = round((returned_orders / total_orders) * 100, 2) if total_orders > 0 else 0.0
     

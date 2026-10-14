@@ -15,25 +15,30 @@ load_dotenv()
 _DATA_CACHE = None
 
 def get_data_path() -> str:
-    path = os.getenv("DATA_PATH", "data/cleaned_flipkart.csv")
-    if os.path.exists(path):
-        return path
-    elif os.path.exists("data/cleaned_flipkart.csv"):
-        return "data/cleaned_flipkart.csv"
-    elif os.path.exists("data/flipkart_sales_enriched.csv"):
-        return "data/flipkart_sales_enriched.csv"
-    elif os.path.exists("flipkart_sales_new.xlsx"):
-        from data.prepare_data import process_real_world_dataset
-        process_real_world_dataset()
-        return "data/cleaned_flipkart.csv"
-    return path
+    # 1. Prefer high-speed lightweight Parquet (6.7MB, loads in <1s)
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    candidates = [
+        os.path.join(base_dir, "data", "cleaned_flipkart.parquet"),
+        "data/cleaned_flipkart.parquet",
+        os.path.join(base_dir, "data", "cleaned_flipkart.csv"),
+        "data/cleaned_flipkart.csv",
+        os.path.join(base_dir, "data", "flipkart_sales_enriched.csv"),
+        "data/flipkart_sales_enriched.csv",
+    ]
+    for c in candidates:
+        if os.path.exists(c) and os.path.getsize(c) > 1000:
+            return c
+    return os.getenv("DATA_PATH", os.path.join(base_dir, "data", "cleaned_flipkart.parquet"))
 
 def load_sales_data(reload: bool = False) -> pd.DataFrame:
     """Loads cleaned real-world transaction dataset with caching."""
     global _DATA_CACHE
     if _DATA_CACHE is None or reload:
         filepath = get_data_path()
-        df = pd.read_csv(filepath, low_memory=False)
+        if filepath.endswith(".parquet"):
+            df = pd.read_parquet(filepath)
+        else:
+            df = pd.read_csv(filepath, low_memory=False)
         if "Order Date" in df.columns:
             df["Order Date"] = pd.to_datetime(df["Order Date"])
         if "Delivery Date" in df.columns:

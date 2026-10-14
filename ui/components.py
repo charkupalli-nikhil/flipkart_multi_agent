@@ -41,7 +41,12 @@ def render_kpi_header(custom_df=None):
         aov_str = f"₹{(tot_rev / orders_count):,.2f}" if orders_count > 0 else "₹0.00"
         rating_val = round(float(custom_df["Customer Rating"].mean()), 2)
         
-        is_ret = custom_df["Is Returned"] if "Is Returned" in custom_df.columns else (custom_df["Status"] == "Returned")
+        if "Is Returned" in custom_df.columns:
+            is_ret = custom_df["Is Returned"]
+        elif "Status" in custom_df.columns:
+            is_ret = (custom_df["Status"] == "Returned")
+        else:
+            is_ret = pd.Series(False, index=custom_df.index)
         returned_orders = int(is_ret.sum())
         return_rate = round((returned_orders / orders_count) * 100, 2) if orders_count > 0 else 0.0
         
